@@ -1,54 +1,520 @@
-# Privacy Policy di Garage23
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Garage00 — Informativa sulla privacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F7FA;
+    --surface: #FFFFFF;
+    --surface-2: #EEF0F4;
+    --text: #14181F;
+    --text-muted: #5B6472;
+    --border: #E1E4EA;
+    --accent: #FF5C00;
+    --accent-soft: #FFF1E8;
+    --accent-contrast: #FFFFFF;
+    --mono: 'Rajdhani', 'Segoe UI', sans-serif;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  }
 
-**Data di entrata in vigore:** 2 Settembre 2026
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0F17;
+      --surface: #131C2E;
+      --surface-2: #1B2436;
+      --text: #F2F4F7;
+      --text-muted: #9AA4B2;
+      --border: #263049;
+      --accent: #FF7940;
+      --accent-soft: rgba(255, 121, 64, 0.14);
+      --accent-contrast: #14181F;
+    }
+  }
 
-La presente Privacy Policy descrive le modalità con cui l'applicazione mobile **Garage23** gestisce ed elabora i dati personali degli utenti.
+  * { box-sizing: border-box; }
 
----
+  html, body {
+    margin: 0;
+    background: var(--bg);
+  }
 
-### 1. Tipologia di Dati Raccolti
+  body {
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.65;
+  }
 
-Garage23 raccoglie ed elabora esclusivamente i dati strettamente necessari per il funzionamento delle funzionalità offerte:
+  .shell {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
 
-* **Nome Utente:** Utilizzato esclusivamente per personalizzare le notifiche e l'interfaccia utente.
-* **Dati di Localizzazione GPS (incluso l'accesso in Background):** Il GPS viene utilizzato unicamente per individuare e salvare automaticamente la posizione del veicolo parcheggiato (Auto-Park) e per consultare le informazioni meteo locali per la manutenzione.
-* **Accesso alla Fotocamera e Galleria Foto:** Utilizzato esclusivamente per scansionare la targa tramite riconoscimento del testo (OCR) e consentire all'utente di allegare immagini dei propri veicoli.
-* **Dati del Veicolo:** Targhe, interventi di manutenzione e dati carburante inseriti manualmente dall'utente.
+  header.top {
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
 
----
+  .stripe {
+    width: 56px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
 
-### 2. Conservazione e Trattamento dei Dati (Archiviazione Locale)
+  .wordmark {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
 
-* **Nessun Server Esterno:** Tutti i dati dell'utente, inclusi i dettagli dei veicoli, la cronologia dei parcheggi e i registri delle manutenzioni, sono salvati **esclusivamente in locale** sul dispositivo dell'utente tramite database crittografato SQLite e file di preferenze locali (`SharedPreferences`).
-* **Nessuna Vendita o Profilazione:** Garage23 **non vende, non trasferisce e non condivide** i dati personali o di localizzazione degli utenti a terze parti né li utilizza per tracciamenti pubblicitari o profilazione commerciale.
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
 
----
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
 
-### 3. Permessi Richiesti e Gestione
+  .tag {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-variant-numeric: tabular-nums;
+  }
 
-L'applicazione richiede i seguenti permessi al dispositivo, che l'utente può revocare in qualsiasi momento dalle impostazioni del proprio sistema operativo (Android / iOS):
+  .tag.accent {
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
 
-* **Posizione (Sempre/In background):** Necessaria per consentire al servizio di telematica di rilevare la fermata dell'auto e salvare il parcheggio senza che l'app debba rimanere aperta.
-* **Fotocamera/Galleria:** Necessaria per l'acquisizione delle foto del libretto/targa.
-* **Notifiche Push:** Necessaria per inviare alert di sicurezza durante la guida e promemoria manutenzione.
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
 
----
+  .summary-item {
+    background: var(--surface);
+    padding: 22px 22px 20px;
+  }
 
-### 4. Servizi di Terze Parti
+  .summary-item .label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+  }
 
-Garage23 utilizza le seguenti librerie tecniche sul dispositivo:
-* **Google ML Kit (Locale):** Per l'elaborazione OCR delle targhe direttamente sul dispositivo, senza invio di immagini a server esterni.
-* **Open-Meteo API:** Interrogata in modo anonimo inviando unicamente le coordinate geografiche correnti per restituire le previsioni del tempo.
+  .summary-item .value {
+    font-family: var(--serif);
+    font-size: 16.5px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.35;
+  }
 
----
+  .layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
 
-### 5. Cancellazione dei Dati
+  nav.toc {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
 
-Essendo tutti i dati conservati sul dispositivo dell'utente, la disinstallazione dell'applicazione comporta la **cancellazione definitiva e irreversibile** di tutti i dati memorizzati nel database locale.
+  nav.toc a {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 7px 0;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
 
----
+  nav.toc a span.n {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    margin-right: 8px;
+  }
 
-### 6. Contatti
+  nav.toc a:hover {
+    color: var(--text);
+    border-left-color: var(--accent);
+  }
 
-Per qualsiasi chiarimento o richiesta relativa alla presente Privacy Policy, è possibile contattare lo sviluppatore all'indirizzo email:  
-**supporto@garage23app.com** *(sostituisci con la tua email)*
+  main { min-width: 0; }
+
+  section.clause {
+    padding-bottom: 44px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 24px;
+  }
+
+  section.clause:last-of-type {
+    border-bottom: none;
+  }
+
+  .clause-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .clause-num {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    min-width: 28px;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 23px;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  section.clause > p, section.clause > ul {
+    max-width: 66ch;
+  }
+
+  p { margin: 0 0 14px; color: var(--text); }
+
+  ul.plain {
+    margin: 0 0 14px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  ul.plain li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  ul.plain li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--accent);
+  }
+
+  .data-table {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 4px 0 20px;
+    max-width: 66ch;
+  }
+
+  .data-row {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-row:last-child { border-bottom: none; }
+
+  .data-row > div {
+    padding: 13px 16px;
+    font-size: 14.5px;
+  }
+
+  .data-row .k {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface-2);
+  }
+
+  .data-row .v { color: var(--text); }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 6px 0 18px;
+    max-width: 66ch;
+  }
+
+  .callout p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--text);
+  }
+
+  .callout p strong { color: var(--accent); }
+
+  a.inline { color: var(--accent); text-decoration-thickness: 1px; }
+
+  footer.bottom {
+    margin-top: 24px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  footer.bottom p {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.toc {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    nav.toc a { padding: 0; border-left: none; }
+    nav.toc a span.n { margin-right: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="stripe"></div>
+    <p class="wordmark">Garage00</p>
+    <h1>Informativa sulla privacy</h1>
+    <div class="meta-row">
+      <span class="tag accent">In vigore dal 9 settembre 2026</span>
+      <span class="tag">App v1.0.0</span>
+      <span class="tag">Nessun server proprio</span>
+    </div>
+  </header>
+
+  <div class="summary">
+    <div class="summary-item">
+      <p class="label">Dove vivono i dati</p>
+      <p class="value">Solo sul tuo telefono</p>
+    </div>
+    <div class="summary-item">
+      <p class="label">Account richiesto</p>
+      <p class="value">Nessuno</p>
+    </div>
+    <div class="summary-item">
+      <p class="label">Pubblicità / tracciamento</p>
+      <p class="value">Assenti</p>
+    </div>
+    <div class="summary-item">
+      <p class="label">Pagamenti</p>
+      <p class="value">Gestiti da Google Play</p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc">
+      <a href="#titolare"><span class="n">01</span>Titolare</a>
+      <a href="#dati"><span class="n">02</span>Dati raccolti</a>
+      <a href="#archiviazione"><span class="n">03</span>Dove sono salvati</a>
+      <a href="#acquisti"><span class="n">04</span>Acquisti in-app</a>
+      <a href="#terze-parti"><span class="n">05</span>Servizi terzi</a>
+      <a href="#backup"><span class="n">06</span>Backup ed export</a>
+      <a href="#conservazione"><span class="n">07</span>Conservazione</a>
+      <a href="#diritti"><span class="n">08</span>I tuoi diritti</a>
+      <a href="#minori"><span class="n">09</span>Minori</a>
+      <a href="#modifiche"><span class="n">10</span>Modifiche</a>
+      <a href="#contatti"><span class="n">11</span>Contatti</a>
+    </nav>
+
+    <main>
+      <section class="clause" id="titolare">
+        <div class="clause-head">
+          <span class="clause-num">01</span>
+          <h2>Titolare del trattamento</h2>
+        </div>
+        <p>Garage00 è sviluppata e mantenuta da uno sviluppatore indipendente. Per qualunque richiesta relativa a questa informativa o ai tuoi dati puoi scrivere all'indirizzo indicato nella sezione Contatti in fondo alla pagina.</p>
+      </section>
+
+      <section class="clause" id="dati">
+        <div class="clause-head">
+          <span class="clause-num">02</span>
+          <h2>Quali dati raccoglie l'app, e perché</h2>
+        </div>
+        <p>Garage00 è un'app di gestione garage: i dati che tratta servono esclusivamente a far funzionare le sue funzioni, e restano sul dispositivo (vedi sezione 03).</p>
+
+        <div class="data-table">
+          <div class="data-row">
+            <div class="k">Dati veicoli</div>
+            <div class="v">Targa, marca, modello, chilometraggio, rifornimenti, tagliandi, lavaggi, scadenze, documenti e tessere punti che inserisci tu manualmente.</div>
+          </div>
+          <div class="data-row">
+            <div class="k">Posizione GPS</div>
+            <div class="v">Usata solo per salvare dove hai parcheggiato e per calcolare la distanza dai distributori di carburante più vicini. Il calcolo avviene interamente sul telefono.</div>
+          </div>
+          <div class="data-row">
+            <div class="k">Fotocamera e galleria</div>
+            <div class="v">Per fotografare veicoli, documenti e tessere, e per la lettura automatica di libretto/scontrini (elaborata sul dispositivo, non caricata online).</div>
+          </div>
+          <div class="data-row">
+            <div class="k">Notifiche</div>
+            <div class="v">Promemoria locali per scadenze, tagliandi e rate — generati e mostrati dal telefono stesso, nessun servizio push esterno.</div>
+          </div>
+          <div class="data-row">
+            <div class="k">Bluetooth</div>
+            <div class="v">Il permesso può comparire tra le richieste di sistema ma l'app non lo usa oggi per raccogliere o trasmettere alcun dato.</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p><strong>In sintesi:</strong> nessuno di questi dati lascia il tuo telefono, se non quando sei tu a condividerli attivamente (per esempio esportando il PDF di un veicolo o il file di backup).</p>
+        </div>
+      </section>
+
+      <section class="clause" id="archiviazione">
+        <div class="clause-head">
+          <span class="clause-num">03</span>
+          <h2>Dove sono salvati i dati</h2>
+        </div>
+        <p>Garage00 non ha un proprio server: tutti i dati vivono in un database locale sul tuo telefono. Non esiste un account, non c'è sincronizzazione cloud, e lo sviluppatore non ha accesso ai tuoi dati in nessun momento.</p>
+      </section>
+
+      <section class="clause" id="acquisti">
+        <div class="clause-head">
+          <span class="clause-num">04</span>
+          <h2>Acquisti in-app (Garage00 Pro)</h2>
+        </div>
+        <p>Lo sblocco Pro è un acquisto unico gestito interamente da Google Play Billing. Garage00 non vede, non riceve e non conserva alcun dato di pagamento (numero di carta, indirizzo di fatturazione, ecc.): quei dati restano tra te e Google, secondo la loro informativa privacy.</p>
+      </section>
+
+      <section class="clause" id="terze-parti">
+        <div class="clause-head">
+          <span class="clause-num">05</span>
+          <h2>Servizi di terze parti utilizzati</h2>
+        </div>
+        <ul class="plain">
+          <li><strong>Google ML Kit</strong> — riconoscimento testo (OCR) per leggere libretti e scontrini: funziona interamente sul dispositivo, le immagini non vengono inviate a Google.</li>
+          <li><strong>MIMIT</strong> (Ministero delle Imprese e del Made in Italy) — fonte dei prezzi carburante: l'app scarica un elenco pubblico di distributori e prezzi, senza inviare la tua posizione o altri dati personali.</li>
+        </ul>
+        <p>Nessun altro servizio di terze parti (analytics, pubblicità, crash reporting con dati personali) è integrato in Garage00.</p>
+      </section>
+
+      <section class="clause" id="backup">
+        <div class="clause-head">
+          <span class="clause-num">06</span>
+          <h2>Backup ed esportazione dati</h2>
+        </div>
+        <p>Puoi creare in qualsiasi momento un file di backup (.zip) con tutti i tuoi dati, salvato localmente sul telefono, oppure esportare il dossier PDF di un veicolo. In entrambi i casi la condivisione — via email, app di messaggistica, ecc. — è una tua scelta esplicita: l'app non invia mai questi file automaticamente.</p>
+      </section>
+
+      <section class="clause" id="conservazione">
+        <div class="clause-head">
+          <span class="clause-num">07</span>
+          <h2>Conservazione dei dati</h2>
+        </div>
+        <p>I dati restano sul dispositivo finché li mantieni tu. Disinstallando l'app, o cancellando i suoi dati dalle impostazioni Android, tutti i dati vengono eliminati in modo permanente — non essendoci un server, non resta nulla altrove.</p>
+      </section>
+
+      <section class="clause" id="diritti">
+        <div class="clause-head">
+          <span class="clause-num">08</span>
+          <h2>I tuoi diritti</h2>
+        </div>
+        <p>Poiché i dati sono esclusivamente locali, hai controllo diretto e immediato su di essi in ogni momento:</p>
+        <ul class="plain">
+          <li><strong>Accesso</strong> — tutti i tuoi dati sono sempre visibili dentro l'app stessa.</li>
+          <li><strong>Esportazione</strong> — tramite la funzione di backup, in formato .zip.</li>
+          <li><strong>Cancellazione</strong> — eliminando un veicolo/voce dall'app, o disinstallando l'app per rimuovere tutto.</li>
+        </ul>
+      </section>
+
+      <section class="clause" id="minori">
+        <div class="clause-head">
+          <span class="clause-num">09</span>
+          <h2>Minori</h2>
+        </div>
+        <p>Garage00 non è rivolta a bambini e non raccoglie consapevolmente dati di minori di 14 anni.</p>
+      </section>
+
+      <section class="clause" id="modifiche">
+        <div class="clause-head">
+          <span class="clause-num">10</span>
+          <h2>Modifiche a questa informativa</h2>
+        </div>
+        <p>Se questa informativa cambia in modo sostanziale, la data "in vigore dal" in cima alla pagina verrà aggiornata. Ti consigliamo di ricontrollarla periodicamente, in particolare prima di un aggiornamento importante dell'app.</p>
+      </section>
+
+      <section class="clause" id="contatti">
+        <div class="clause-head">
+          <span class="clause-num">11</span>
+          <h2>Contatti</h2>
+        </div>
+        <p>Per domande su questa informativa o sui tuoi dati, scrivi a <a class="inline" href="mailto:nicstv@gmail.com">nicstv@gmail.com</a>.</p>
+
+        <footer class="bottom">
+          <p>Garage00 · Informativa sulla privacy · versione 1.0 · 9 settembre 2026</p>
+        </footer>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>
