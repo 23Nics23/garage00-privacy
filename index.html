@@ -345,8 +345,8 @@
     <p class="wordmark">Garage00</p>
     <h1>Informativa sulla privacy</h1>
     <div class="meta-row">
-      <span class="tag accent">In vigore dal 9 settembre 2026</span>
-      <span class="tag">App v1.0.0</span>
+      <span class="tag accent">In vigore dal 4 ottobre 2026</span>
+      <span class="tag">App v1.1</span>
       <span class="tag">Nessun server proprio</span>
     </div>
   </header>
@@ -408,7 +408,7 @@
           </div>
           <div class="data-row">
             <div class="k">Posizione GPS</div>
-            <div class="v">Usata solo per salvare dove hai parcheggiato e per calcolare la distanza dai distributori di carburante più vicini. Il calcolo avviene interamente sul telefono.</div>
+            <div class="v">Usata solo per salvare dove hai parcheggiato, per compilare l'indirizzo di un intervento e per calcolare la distanza dai distributori di carburante più vicini. I calcoli avvengono sul telefono; per trasformare le coordinate in un indirizzo l'app usa il servizio di sistema (vedi sezione 05). Il rilevamento automatico del parcheggio funziona solo mentre l'app è aperta.</div>
           </div>
           <div class="data-row">
             <div class="k">Fotocamera e galleria</div>
@@ -418,14 +418,10 @@
             <div class="k">Notifiche</div>
             <div class="v">Promemoria locali per scadenze, tagliandi e rate — generati e mostrati dal telefono stesso, nessun servizio push esterno.</div>
           </div>
-          <div class="data-row">
-            <div class="k">Bluetooth</div>
-            <div class="v">Il permesso può comparire tra le richieste di sistema ma l'app non lo usa oggi per raccogliere o trasmettere alcun dato.</div>
-          </div>
         </div>
 
         <div class="callout">
-          <p><strong>In sintesi:</strong> nessuno di questi dati lascia il tuo telefono, se non quando sei tu a condividerli attivamente (per esempio esportando il PDF di un veicolo o il file di backup).</p>
+          <p><strong>In sintesi:</strong> i tuoi dati restano sul telefono. Escono solo quando sei tu a condividerli (per esempio esportando il PDF di un veicolo o il file di backup) o, in forma minima e senza che l'app li conservi, per le tre funzioni di rete descritte nella sezione 05: indirizzo dalle coordinate, mini-mappa del parcheggio e prezzi carburante.</p>
         </div>
       </section>
 
@@ -434,7 +430,7 @@
           <span class="clause-num">03</span>
           <h2>Dove sono salvati i dati</h2>
         </div>
-        <p>Garage00 non ha un proprio server: tutti i dati vivono in un database locale sul tuo telefono. Non esiste un account, non c'è sincronizzazione cloud, e lo sviluppatore non ha accesso ai tuoi dati in nessun momento.</p>
+        <p>Garage00 non ha un proprio server: tutti i dati vivono in un database locale sul tuo telefono. Non esiste un account, non c'è sincronizzazione cloud, e lo sviluppatore non ha accesso ai tuoi dati in nessun momento. Anche il backup automatico di Android/Google è disattivato per questa app, quindi i dati non finiscono nemmeno nel tuo Google Drive.</p>
       </section>
 
       <section class="clause" id="acquisti">
@@ -451,8 +447,11 @@
           <h2>Servizi di terze parti utilizzati</h2>
         </div>
         <ul class="plain">
-          <li><strong>Google ML Kit</strong> — riconoscimento testo (OCR) per leggere libretti e scontrini: funziona interamente sul dispositivo, le immagini non vengono inviate a Google.</li>
+          <li><strong>Google ML Kit</strong> — riconoscimento testo (OCR) per leggere libretti e scontrini: funziona sul dispositivo, le immagini non vengono inviate a Google. Il modello di lettura può essere scaricato una volta da Google Play Services.</li>
           <li><strong>Fonti pubbliche ufficiali</strong> per i prezzi carburante: l'app scarica un elenco pubblico di distributori e prezzi, senza inviare la tua posizione o altri dati personali.</li>
+          <li><strong>Servizio di geocoding del sistema</strong> (su Android fornito da Google) — usato per trasformare le coordinate GPS in un indirizzo (parcheggio, luogo di un intervento). Le coordinate vengono inviate a quel servizio secondo le sue regole; Garage00 non le conserva altrove.</li>
+          <li><strong>OpenStreetMap</strong> — la mini-mappa del parcheggio scarica le tessere della mappa dai server di OpenStreetMap, che ricevono l'area richiesta e l'indirizzo IP del telefono.</li>
+          <li><strong>Google Maps</strong> — solo se tocchi "Naviga": si apre l'app delle mappe con la posizione, come qualsiasi link di navigazione.</li>
         </ul>
         <p>Nessun altro servizio di terze parti (analytics, pubblicità, crash reporting con dati personali) è integrato in Garage00.</p>
       </section>
@@ -510,7 +509,7 @@
         <p>Per domande su questa informativa o sui tuoi dati, scrivi a <a class="inline" href="mailto:nicstv@gmail.com">nicstv@gmail.com</a>.</p>
 
         <footer class="bottom">
-          <p>Garage00 · Informativa sulla privacy · versione 1.0 · 9 settembre 2026</p>
+          <p>Garage00 · Informativa sulla privacy · versione 1.1 · 4 ottobre 2026</p>
         </footer>
       </section>
     </main>
